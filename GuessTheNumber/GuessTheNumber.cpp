@@ -12,27 +12,46 @@ int main() {
     int userGuess = 0;
     int guessescount = 0;
     while (userGuess != numberToGuess) {
-        cout << "enter your guess (1-100): ";
+        cout << "Enter your guess (1-100): ";
         cin >> userGuess;
         guessescount++;
-        if (userGuess == 67) {
+        if (userGuess == 67 || guessescount == 1) {
             cout << "you are not funny bro" << endl;
         }
         if (userGuess < 1 || userGuess == 1) {
-            cout << "please enter a number between 1 and 100." << endl;
+            cout << "Please enter a number between 1 and 100." << endl;
         }
         else if (userGuess < numberToGuess) {
-            cout << "too low. Try again." << endl;
+            cout << "Too low! Try again." << endl;
         }
         else if (userGuess > numberToGuess) {
-            cout << "too high. Try again." << endl;
+            cout << "Too high! Try again." << endl;
         }
         else {
             cout << "Congratulations! You've guessed the number!" << endl;
             cout << "It took you " << guessescount << " guesses." << endl;
+
+            if (guessescount <= 5) {
+                cout << "your good at this nice" << endl;
+            }
+            if (guessescount > 5) {
+                cout << "normal level i guess" << endl;
+            }
+            if (guessescount > 10) {
+                cout << "maybe next time you will get better." << endl;
+            }
+            if (guessescount == 0) {
+                cout << "your cheating this CANNOT be real yk?" << endl;
+            }
+            if (guessescount == -1) {
+				cout << "how could this possibly happen." << endl;
+                
+            }
+            if (guessescount == -5) {
+                cout << "....." << endl;
+
+            return 0;
+
         }
     }
-
-    return 0;
 }
-
